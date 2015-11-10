@@ -2,7 +2,8 @@
 <html ng-app="thingsToBeDoneApp">
   <head>
     <title>Things to be done</title>
-    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.css">
     <script src="vendor/angular/angular.js"></script>
     <script src="js/tasks-controller.js"></script>
   </head>
@@ -10,7 +11,7 @@
     <h1>Things to be done</h1>
     <ul>
       <li class="task" ng-repeat="task in tasks">
-        <span>{{ task.description }}</span>
+        <span ng-class="{striked: task.done === 1}">{{ task.description }}</span>
         <input type="checkbox" ng-model="task.done" checklist-value="task" ng-true-value="1" ng-false-value="0" />
       </li>
     </ul>
