@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="thingsToBeDoneApp">
+  <head>
+    <title>Things to be done</title>
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+    <script src="vendor/angular/angular.js"></script>
+    <script src="js/tasks-controller.js"></script>
+  </head>
+  <body ng-controller="TasksCtrl">
+    <h1>Things to be done</h1>
+    <ul>
+      <li class="task" ng-repeat="task in tasks">
+        <span>{{ task.description }}</span>
+        <input type="checkbox" ng-model="task.done" checklist-value="task" ng-true-value="1" ng-false-value="0" />
+      </li>
+    </ul>
+  </body>
+</html>
